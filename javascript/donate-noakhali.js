@@ -31,7 +31,7 @@ document.getElementById('donate-now-btn-1').addEventListener('click', function(e
     div.innerHTML = `
     <div class="border p-4 rounded-lg m-5">
     <h3>${inputValue} Taka is Donated for Donate for Flood at Noakhali, Bangladesh</h3>
-    <p>Date :${new Date().toLocaleDateString()} ${new Date().toLocaleTimeString('en-GB')}</p>
+    <p>Date :${new Date().toLocaleDateString()} GMT - ${new Date().toLocaleTimeString('en-GB')}</p>
     </div>
     `
     document.getElementById('history-section').appendChild(div);

@@ -37,7 +37,7 @@ document.getElementById('btn-donate-quota').addEventListener('click', function(e
     div.innerHTML = `
     <div class="border p-4 rounded-lg m-5">
     <h3>${inputValueQ} Taka is Donated for Aid for Injured in the Quota Movement</h3>
-    <p>Date :${new Date().toLocaleDateString()} ${new Date().toLocaleTimeString('en-GB')}</p>
+    <p>Date :${new Date().toLocaleDateString()} GMT - ${new Date().toLocaleTimeString('en-GB')}</p>
     </div>
     `
     document.getElementById('history-section').appendChild(div);
