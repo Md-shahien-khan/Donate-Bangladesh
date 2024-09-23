@@ -2,13 +2,12 @@ document.getElementById('donate-now-btn-1').addEventListener('click', function(e
     e.preventDefault();
 
     const inputValue = getInputValueById('input-deposit-noakhali');
-    console.log(inputValue);
+    // console.log(inputValue);
     
 
     if(isNaN(inputValue) || inputValue <=0 ){
         alert('invalid Amount');
         return;
-
     };
 
     const balanceInNavbar = getTextValueById('nav-amount');
@@ -20,11 +19,15 @@ document.getElementById('donate-now-btn-1').addEventListener('click', function(e
     const n_Collection = getTextValueById('noakhali-donate-collection');
     const newBalanceForN = inputValue + n_Collection;
 
+    alert('Donation Successful');
+
     document.getElementById('noakhali-donate-collection').innerText = newBalanceForN;
 
-    const newBalanceForNavbar = balanceInNavbar - inputValue;
+    const newBalanceForNavbar = parseFloatbalanceInNavbar - inputValue;
     document.getElementById('nav-amount').innerText = newBalanceForNavbar; 
 
+
+    
     // Add to history
     const div = document.createElement('div');
     

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <!-- daisy ui and tailwind -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- font awesome -->
+    <script src="https://kit.fontawesome.com/3021eab986.js" crossorigin="anonymous"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        clifford: '#da373d',
+                        bgg: 'rgba(180, 244, 97, 1)',
+                        bg_header: 'rgba(249, 247, 243, 1)',
+                    }
+                }
+            }
+        }
+    </script>
+
+</head>
+<body>
+    <header class="sticky top-0 bg-bg_header p-1 pb-3 w-full">
+        <div class="container max-w-screen-lg mx-auto navbar h-12">
+            <div class="navbar-start">
+                <div class="dropdown">
+                    <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h8m-8 6h16" />
+                        </svg>
+                    </div>
+                    <ul tabindex="0"
+                        class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+                        <li><a href="">Home</a></li>
+                        <li>
+                            <a>Donate Option</a>
+                            <ul class="p-2">
+                                <li><a>Donate for Flood at Noakhali, Bangladesh</a></li>
+                                <li><a>Donate for Flood Relief in Feni, Bangladesh</a></li>
+                                <li><a>Aid for Injured in the Quota Movement</a></li>
+                            </ul>
+                        </li>
+                        <li><a>History</a></li>
+                    </ul>
+                </div>
+                <a id="blog-home-button" href="#" class="btn bg-bgg">Home</a>
+            </div>
+            <div class="navbar-center hidden lg:flex space-x-3">
+                <img src="assets/logo.png" alt="">
+                <p class="font-bold">Donate Bangladesh</p>
+            </div>
+            <div class="navbar-end space-x-3">
+                <img src="assets/coin.png" alt="">
+                <p><span id="nav-amount">20000</span> BDT</p>
+            </div>
+        </div>
+    </header>
+    <!-- blog -->
+    <main class="container w-3/5 mx-auto">
+        <h1 class="text-3xl font-bold mt-5 mb-5">Important FAQ <i class="fa-solid fa-question"></i></h1>
+        <div class="collapse collapse-arrow bg-base-200">
+            <input type="radio" name="my-accordion-2" checked="checked" />
+            <div class="collapse-title text-xl font-medium">What is the Document Object Model(DOM)?</div>
+            <div class="collapse-content">
+              <p>Dom Stands for Document Object Model. Which is a programming interface that represents a web page's structure as tree of nodes and objects.</p>
+            </div>
+        </div>
+        <div class="collapse collapse-arrow bg-base-200">
+            <input type="radio" name="my-accordion-2" />
+            <div class="collapse-title text-xl font-medium">How do you select an element from the DOM</div>
+            <div class="collapse-content">
+              <p>Using getElementByid, getElementByClassName, getElementByTagName, querySelector, querySelectorAll etc.
+              </p>
+            </div>
+        </div>
+        <div class="collapse collapse-arrow bg-base-200">
+            <input type="radio" name="my-accordion-2" />
+            <div class="collapse-title text-xl font-medium">What is event delegation in the context of the DOM, and why is it useful?</div>
+            <div class="collapse-content">
+              <p>Event delegation refers to the process of suing event propagation (bubbling) to handle events at a higher level in the DOM than the element on which the event originated. It allows us to attach a single event listener for elements that exist now or in the future.</p>
+            </div>
+        </div>
+        <div class="collapse collapse-arrow bg-base-200">
+        <input type="radio" name="my-accordion-2" />
+            <div class="collapse-title text-xl font-medium">How do you manipulate an element's attributes and styles using DOM?</div>
+            <div class="collapse-content">
+            <p>The classList object only provide methods change the class of an element. If you want to change other attributes like id, href, or src, you can use that setAttribute() method.</p>
+        </div>
+        </div>
+        <div class="collapse collapse-arrow bg-base-200">
+            <input type="radio" name="my-accordion-2" />
+                <div class="collapse-title text-xl font-medium">How do you manipulate an element's attributes and styles using DOM?</div>
+                <div class="collapse-content">
+                <p>The classList object only provide methods change the class of an element. If you want to change other attributes like id, href, or src, you can use that setAttribute() method.</p>
+        </div>
+        </div>
+    </main>
+
+
+    <script>
+         document.getElementById('blog-home-button').addEventListener('click', function(){
+         window.location.href = "/index.html";
+        });
+    </script>
+</body>
+</html>
+
+            

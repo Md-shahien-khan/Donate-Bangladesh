@@ -9,6 +9,7 @@
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Style css -->
+    <link rel="stylesheet" href="style.css">
     <script>
         tailwind.config = {
             theme: {
@@ -25,9 +26,9 @@
 </head>
 
 <body>
-    <header class="sticky top-0 bg-bg_header p-1 pb-3 w-full">
+    <header class="bg-bg_header sticky top-0  p-1 pb-3 w-full">
         <!-- navbar starts -->
-        <div class="container max-w-screen-lg mx-auto navbar h-12">
+        <div class="container max-w-screen-lg mx-auto navbar pb-8">
             <div class="navbar-start">
                 <div class="dropdown">
                     <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
@@ -39,18 +40,19 @@
                     </div>
                     <ul tabindex="0"
                         class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
-                        <li><a>Item 1</a></li>
+                        <li><a>Home</a></li>
                         <li>
-                            <a>Parent</a>
+                            <a>Donate Option</a>
                             <ul class="p-2">
-                                <li><a>Submenu 1</a></li>
-                                <li><a>Submenu 2</a></li>
+                                <li><a>Donate for Flood at Noakhali, Bangladesh</a></li>
+                                <li><a>Donate for Flood Relief in Feni, Bangladesh</a></li>
+                                <li><a>Aid for Injured in the Quota Movement</a></li>
                             </ul>
                         </li>
-                        <li><a>Item 3</a></li>
+                        <li><a>History</a></li>
                     </ul>
                 </div>
-                <a href="" class="btn bg-bgg">Blog</a>
+                <a id="home-button" href="#" class="btn bg-bgg">Blog</a>
             </div>
             <div class="navbar-center hidden lg:flex space-x-3">
                 <img src="assets/logo.png" alt="">
@@ -61,18 +63,17 @@
                 <p><span id="nav-amount">20000</span> BDT</p>
             </div>
         </div>
-        <div class="flex justify-center">
+        <!-- navbar ends -->
+        <!-- banner -->
+        <div class="flex justify-center mt-6 mb-6">
             <button class="btn bg-bgg w-1/6" id="donation">Donation</button>
             <button class="btn w-1/6" id="history">History</button>
         </div>
+        <!-- banner ends -->
 
-
-
-
-        <!-- navbar ends -->
     </header>
-    <main class="max-w-screen-lg mx-auto ">
-        <div id="donate-section" class="space-y-3">
+    <main class="max-w-screen-lg mx-auto mt-10">
+        <div id="donate-section" class="space-y-5">
             <!-- div card 1 -->
             <div class="md:col-span-4 lg:col-span-3  bg-white rounded-3xl border border-gray-300">
                 <div class="flex flex-col md:flex-col lg:flex-row gap-4 items-center p-5">
@@ -93,21 +94,15 @@
                                 class="input input-bordered w-full" required />
                         </form>
                         <div class="card-actions">
-                            <button id="donate-now-btn-1" class="btn w-full bg-bgg"
-                                onclick="my_modal_1.showModal()">Donate Now</button>
-                            <dialog id="my_modal_1" class="modal">
-                                <div class="modal-box flex flex-col items-center justify-center">
-                                    <h3 class="text-4xl font-bold mb-2">Congrats!</h3>
-                                    <img class="" src="assets/coin.png" alt="">
-                                    <p class="py-4">You Have Donated for HumanKind.</p>
-                                    <h3 class="text-2xl font-bold">Successfully</h3>
-                                    <div class="modal-action">
-                                        <form method="dialog">
-                                            <button class="btn">close confirmation</button>
-                                        </form>
-                                    </div>
-                                </div>
-                            </dialog>
+                            <button id="donate-now-btn-1" class="btn w-full bg-bgg" onclick="openPopup()">Donate Now</button>
+                            <!-- Modal i made by using plain js and css -->
+                            <div id="popup" class="popup">
+                                <h3 class="text-4xl font-bold mb-2">Congrats!</h3>
+                                <img class="w-1/6" src="assets/coin.png" alt="">
+                                <p class="py-4">You Have Donated for HumanKind.</p>
+                                <h3 class="text-2xl font-bold">Successfully</h3>
+                                <button class="btn mt-3" type="button" onclick="closePopup()">Close Confirmation</button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -166,42 +161,31 @@
                                 class="input input-bordered w-full" required />
                         </form>
                         <div class="card-actions">
-                            <button id="btn-donate-quota" class="btn w-full bg-bgg"
-                                onclick="my_modal_1.showModal()">Donate
-                                Now</button>
-                            <dialog id="my_modal_1" class="modal">
-                                <div class="modal-box flex flex-col items-center justify-center">
-                                    <h3 class="text-4xl font-bold mb-2">Congrats!</h3>
-                                    <img class="" src="assets/coin.png" alt="">
-                                    <p class="py-4">You Have Donated for HumanKind.</p>
-                                    <h3 class="text-2xl font-bold">Successfully</h3>
-                                    <div class="modal-action">
-                                        <form method="dialog">
-                                            <button class="btn">close confirmation</button>
-                                        </form>
-                                    </div>
-                                </div>
-                            </dialog>
+                            <button id="btn-donate-quota" class="btn w-full bg-bgg">Donate
+                            Now</button>
                         </div>
                     </div>
                 </div>
             </div>
             <!-- div card 3 -->
         </div>
-
         <!-- transaction start-->
         <div id="history-section" class="hidden">
         </div>
         <!-- transaction end -->
-
-
-        <!-- script files -->
-        <script src="javascript/utilities.js"></script>
-        <script src="javascript/donate-noakhali.js"></script>
-        <script src="javascript/donate-feni.js"></script>
-        <script src="javascript/donate-quota.js"></script>
-        <script src="javascript/features.js"></script>
     </main>
+
+    <!-- script files -->
+    <script src="javascript/utilities.js"></script>
+    <script src="javascript/donate-noakhali.js"></script>
+    <script src="javascript/donate-feni.js"></script>
+    <script src="javascript/donate-quota.js"></script>
+    <script src="javascript/features.js"></script>
+    <script>
+        document.getElementById('home-button').addEventListener('click', function () {
+            window.location.href = "/blog.html";
+        });
+    </script>
 </body>
 
 </html>
