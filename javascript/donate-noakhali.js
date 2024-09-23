@@ -23,7 +23,7 @@ document.getElementById('donate-now-btn-1').addEventListener('click', function(e
 
     document.getElementById('noakhali-donate-collection').innerText = newBalanceForN;
 
-    const newBalanceForNavbar = parseFloatbalanceInNavbar - inputValue;
+    const newBalanceForNavbar = balanceInNavbar - inputValue;
     document.getElementById('nav-amount').innerText = newBalanceForNavbar; 
 
 
