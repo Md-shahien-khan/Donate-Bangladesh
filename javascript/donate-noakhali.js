@@ -6,14 +6,14 @@ document.getElementById('donate-now-btn-1').addEventListener('click', function(e
     
 
     if(isNaN(inputValue) || inputValue <=0 ){
-        alert('invalid Amount');
+        alert('invalid Donation Amount');
         return;
     };
 
     const balanceInNavbar = getTextValueById('nav-amount');
 
     if(inputValue > balanceInNavbar){
-        alert('Donation Unsuccessful thats too much');
+        alert('Donation Unsuccessful. Amount is bigger than your current balance.');
         return;
     }
     const n_Collection = getTextValueById('noakhali-donate-collection');

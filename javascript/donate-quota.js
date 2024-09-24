@@ -5,14 +5,14 @@ document.getElementById('btn-donate-quota').addEventListener('click', function(e
 
 
     if(isNaN(inputValueQ) || inputValueQ <=0){
-        alert('invalid Amount');
+        alert('invalid Donation Amount');
         return;
     };
 
     const balanceInNavbar = getTextValueById('nav-amount');
 
     if(inputValueQ > balanceInNavbar){
-        alert('Donation Unsuccessful');
+        alert('Donation Unsuccessful. Amount is bigger than your current balance.');
         return;
     }
 

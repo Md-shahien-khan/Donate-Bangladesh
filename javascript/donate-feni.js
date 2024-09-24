@@ -4,14 +4,14 @@ document.getElementById('donate-now-btn-2').addEventListener('click', function(e
     const inputValueF = getInputValueById('input-feni');
     console.log(inputValueF);
     if(isNaN(inputValueF) || inputValueF <=0){
-        alert('invalid Amount');
+        alert('invalid Donation Amount');
         return;
     };
 
     const balanceInNavbar = getTextValueById('nav-amount');
 
     if(inputValueF > balanceInNavbar){
-        alert('Donation Unsuccessful');
+        alert('Donation Unsuccessful. Amount is bigger than your current balance.');
         return;
     }
 
